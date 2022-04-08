@@ -27,5 +27,6 @@ if __name__ == '__main__':
     print(set_cover({1,2,3,4,5,6,7,8,9,10},test1))
     print()
     print()
+    # Output should be [{1, 2, 3}, {4, 5}]
     print("Test 2: ")
     print(set_cover({1,2,3,4,5},test2))
