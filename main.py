@@ -1,20 +1,25 @@
 # Takes in the set U of n elements and a list of subsets U S1,...,S2
 # Returns a list of sets included in the set cover
 def set_cover(u_set, s_list):
+    # set of remaining nodes to cover
     r_set = u_set
     print(f'Orig R set: {r_set}')
     print(f'List of subsets: {s_list}')
     print()
+    # list for selected subsets
     select_set = []
     while len(r_set) != 0:
         elems = 0
         for s in s_list:
+            # select the subset with the most uncovered elements
             if elems < len(r_set.intersection(s)):
                 elems = len(r_set.intersection(s))
                 select = s
+        # add the subset to the selected list
         print(f'Selected s {select}')
         select_set.append(select)
         print(f'R before: {r_set}')
+        # remove its elements from the remaining nodes set
         r_set = r_set - select
         print(f'R minus s: {r_set}')
         print()
